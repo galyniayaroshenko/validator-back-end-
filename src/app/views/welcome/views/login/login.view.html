@@ -1,0 +1,21 @@
+<div>
+  <div class="overlay"></div>
+
+  <form class="form bounceInDown" action="javascript: void 0" [@routeAnimation]>
+    <div class="form-row">
+      <span class="btn-close" (click)="close()"></span>
+    </div>
+    <div class="form-row">
+      <label>Email</label>
+      <input class="input" type="email"></input>
+    </div>
+    <div class="form-row">
+      <label>Password</label>
+      <input class="input" type="password"></input>
+    </div>
+    <div class="form-row">
+      <input type="submit" value="Login" (click)="login()">
+    </div>
+  </form>
+  
+</div>

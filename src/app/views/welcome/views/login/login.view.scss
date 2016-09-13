@@ -1,0 +1,118 @@
+// @mixin animation-name($animation) {
+//   -webkit-animation-name: $animation;
+//       -moz-animation-name: $animation;
+//         -o-animation-name: $animation;
+//           animation-name: $animation;
+// }
+// @mixin animation-fill-mode($animation-fill-mode) {
+//    -webkit-animation-fill-mode:$animation-fill-mode;
+//     -moz-animation-fill-mode:$animation-fill-mode;
+//       -ms-animation-fill-mode:$animation-fill-mode;
+//         -o-animation-fill-mode:$animation-fill-mode;
+//           animation-fill-mode:$animation-fill-mode;
+// }
+// @mixin animation-duration($animation-duration) {
+//    -webkit-animation-duration:$animation-duration;
+//     -moz-animation-duration:$animation-duration;
+//       -ms-animation-duration:$animation-duration;
+//         -o-animation-duration:$animation-duration;
+//           animation-duration:$animation-duration;
+// }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.btn-close {
+  cursor: pointer;
+  display: inline-block;
+  height: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px;
+
+  &:after, &:before {
+    content: "";
+    border-bottom: 1px solid black;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    transition-duration: 250ms;
+    transition-property: width;
+  }
+  &:after {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &:before {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &:before, &:after {
+      width: 170%;
+    }
+  }
+}
+
+.form {
+  background-color: white;
+  border-radius: 10px;
+  left: 50%;
+  margin-left: -200px;
+  padding: 25px;
+  position: absolute;
+  top: 35%;
+  width: 400px;
+  // @include animation-name(bounceInDown);
+}
+
+.form-row {
+  position: relative;
+
+  label {
+    display: block;
+  }
+  .input {
+    border: 1px solid silver;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+/** animate **/
+// .bounceInDown {
+//   @include animation-fill-mode(bouth);
+//   @include animation-duration(1s);
+// }
+
+// @keyframes bounceInDown {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(-2000px);
+//   }
+//   60% {
+//     opacity: 1;
+//     transform: translateY(30px);
+//   }
+//   80% {
+//     transform: translateY(-10px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+/** end animate **/

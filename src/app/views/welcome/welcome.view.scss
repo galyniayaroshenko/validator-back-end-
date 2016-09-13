@@ -1,0 +1,33 @@
+.logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  margin-top: 20%;
+}
+.button {
+  $color: rgb(0, 128, 255);
+
+  background-color: $color;
+  border-radius: 4px;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 250px;
+
+  transition-duration: 200ms;
+  transition-property: background-color;
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+  &:active {
+    background-color: darken($color, 5%);
+  }
+}
